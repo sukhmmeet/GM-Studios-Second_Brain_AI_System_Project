@@ -37,7 +37,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.dhaliwal.secondbrainaisystem.data.local.Note
 import com.dhaliwal.secondbrainaisystem.data.local.NoteTag
+import com.dhaliwal.secondbrainaisystem.ui.components.NotesItem
 import com.dhaliwal.secondbrainaisystem.ui.theme.SecondBrainAISystemTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,7 +48,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SecondBrainAISystemTheme {
-
+                MainScreen()
             }
         }
     }
@@ -147,9 +149,45 @@ fun MainScreen() {
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            contentAlignment = Alignment.Center
         ) {
-            
+            Column(
+
+            ) {
+                NotesItem(
+                    note = Note(
+                        id = 1,
+                        title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        tags = listOf(
+                            "Lorem",
+                            "Ipsum",
+                            "Dolor",
+                            "Sit",
+                            "Amet",
+                            "Consectetur",
+                            "Adipiscing"
+                        ),
+                        createdAt = System.currentTimeMillis()
+                    )
+                )
+                NotesItem(
+                    note = Note(
+                        id = 1,
+                        title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        tags = listOf(
+                            "Lorem",
+                            "Ipsum",
+                            "Dolor",
+                            "Sit",
+                            "Amet",
+                            "Consectetur",
+                            "Adipiscing"
+                        ),
+                        createdAt = System.currentTimeMillis()
+                    )
+                )
+            }
         }
     }
 }
