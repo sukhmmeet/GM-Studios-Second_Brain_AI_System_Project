@@ -41,7 +41,7 @@ fun NotesItem(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp, horizontal = 14.dp)
+            .padding(start = 14.dp, end = 14.dp, bottom = 8.dp)
             .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(4.dp)
